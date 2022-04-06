@@ -1,6 +1,8 @@
-if (process.env.NODE.ENV !== 'production') {
-  require('dotenv').config()
-}
+// if (process.env.NODE.ENV !== 'production') {
+//   require('dotenv').config()
+// }
+
+require('dotenv').config()
 
 const mongoose = require('mongoose')
 const mongooseURI = process.env.mongooseURI
