@@ -1,0 +1,90 @@
+.index-container{
+  display: inline-block;
+  margin-top: 50px;
+  margin-left: 40%;
+}
+
+#category-title{
+  width: 20rem;
+  height: 2rem;
+}
+
+.index-category-container{
+  text-align: center;
+}
+
+.totalamount-container{
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.totalamount-title{
+  position: absolute;
+  top:0;
+  left: 0rem;
+}
+
+.totalamount-sum-amount{
+  font-size: 80px;
+  margin-left: 150px;
+}
+
+.list-container{
+  border: 1px solid gray;
+
+  border-radius: 10px;
+  position: relative;
+  font-size: 20px;
+  display: grid;
+}
+
+.list-content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-title{
+  display: inline-block;
+} 
+
+.list-container-name{
+  font-size: 30px;
+}
+
+.list-container-date{
+  font-size: 5px;
+}
+
+.list-content-name{
+  display: flex;
+}
+
+.list-item-amount{
+font-size: 30px;
+margin-left: 80px;
+margin-top: 0.5rem;
+}
+
+.list-img{
+  margin: auto;
+  padding-right: 10px;
+  color: aqua;
+}
+
+.list-feat{
+  width: 50%;
+ top: -0.5rem;
+ left: 22rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.create-list-container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,29 @@
+.edit-container{
+  display: flex;
+  justify-content: center;
+}
+.edit-container-content{
+  padding: 20px;
+  display: inline-block;
+}
+
+.edit{
+  margin: 30px ;
+}
+
+ .edit-title-container{
+  display: flex;
+}
+
+.edit-title-text,.edit-item-name,.edit-date,#edit-category-title,.edit-amount{
+  margin-left: 30px;
+  font-size: 20px
+}
+
+.edit-btn{
+  width: 15rem;
+  height: 2.5rem;
+  margin-left: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+}

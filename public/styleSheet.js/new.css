@@ -1,0 +1,29 @@
+.new-container{
+  display: flex;
+  justify-content: center;
+}
+.new-container-content{
+  padding: 20px;
+  display: inline-block;
+}
+
+.new{
+  margin: 30px ;
+}
+
+ .new-title-container{
+  display: flex;
+}
+
+.new-title-text,.new-item-name,.new-date,#new-category-title,.new-amount{
+  margin-left: 30px;
+  font-size: 20px
+}
+
+.new-btn{
+  width: 15rem;
+  height: 2.5rem;
+  margin-left: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+}

@@ -1,30 +1,32 @@
 <div class="new-container">
-  <form action="/new" method="POST">
-    <div class="new new-title-container">
-      <div class="new-title">*必填欄位</div>
-      <div class="new-title-text">請輸入你的支出</div>
-    </div>
-    <div class="new new-item-name-container">
-      <label for="new-item-name">名稱*:</label>
-      <input type="text" name="name" class="new-item-name" id="new-item-name">
-    </div>
-    <div class="new new-date-container">
-      <label for="new-date">日期*:</label>
-      <input type="date" name="date" class="new-date" id="new-date">
-    </div>
-    <div class="new new-category-container">
-      <label for="new-category-title">類別*:</label>
-      <select name="category" id="new-category-title">
-        <option value="new-default" selected disabled>Select</option>
-        {{#each item}}
-        <option value="{{this._id}}">{{this.name}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <div class="new new-amount-container">
-      <label for="new-amount">金額*:</label>
-      <input type="number" name="amount" class="new-amount" id="new-amount">
-    </div>
-    <button type="submit" class="new new-btn">新增支出</button>
-  </form>
+  <div class="new-container-content">
+    <form action="/new" method="POST">
+      <div class="new new-title-container">
+        <div class="new-title">*必填欄位</div>
+        <div class="new-title-text">請輸入你的支出</div>
+      </div>
+      <div class="new new-item-name-container">
+        <label for="new-item-name" class="label-name">名稱*:</label>
+        <input type="text" name="name" class="new-item-name" id="new-item-name">
+      </div>
+      <div class="new new-date-container">
+        <label for="new-date"  class="label-date">日期*:</label>
+        <input type="date" name="date" class="new-date" id="new-date">
+      </div>
+      <div class="new new-category-container">
+        <label for="new-category-title" class="label-category-title">類別*:</label>
+        <select name="category" id="new-category-title">
+          <option value="new-default" selected disabled>Select</option>
+          {{#each item}}
+          <option value="{{this._id}}">{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="new new-amount-container">
+        <label for="new-amount" class="label-amount">金額*:</label>
+        <input type="number" name="amount" class="new-amount" id="new-amount">
+      </div>
+      <button type="submit" class="new new-btn">新增支出</button>
+    </form>
+  </div>
 </div>
