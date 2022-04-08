@@ -21,7 +21,9 @@
 }
 
 .totalamount-title{
+  font-size: 20px;
   position: absolute;
+   font-weight: 900;
   top:0;
   left: 0rem;
 }
@@ -33,7 +35,7 @@
 
 .list-container{
   border: 1px solid gray;
-
+  margin-bottom: 10px;
   border-radius: 10px;
   position: relative;
   font-size: 20px;

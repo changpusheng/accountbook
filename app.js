@@ -3,6 +3,7 @@ const app = express()
 const router = require('./routes')
 const exphbs = require('express-handlebars').engine
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 // if (process.env.NODE.ENV !== 'production') {
 //   require('dotenv').config()
@@ -17,6 +18,7 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
 app.use(express.static('public'))
+app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(router)
 

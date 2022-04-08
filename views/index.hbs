@@ -11,28 +11,32 @@
   </div>
   <div class="index totalamount-container">
     <div class="totalamount-title">
-      totalAmount:
+      總金額:
     </div>
     <div class="totalamount-sum-amount">
-      2000
+      {{totalAmount}}
     </div>
   </div>
+  {{#each item}}
   <div class="index list-container">
     <div class="list-content">
       <div class="list-content-name">
         <div class="list-img"><i class=" fa-solid fa-house fa-xl"></i></div>
         <div class="list-title">
-          <div class="list-container-name">午餐</div>
-          <div class="list-container-date">2022/04/05</div>
+          <div class="list-container-name">{{this.name}}</div>
+          <div class="list-container-date">{{this.createAt}}</div>
         </div>
       </div>
-      <div class="list-item-amount">60</div>
+      <div class="list-item-amount">{{this.amount}}</div>
       <div class="list-feat">
-        <div><a href="/edit" class="btn">修改</a></div>
-        <div><a href="#" class="btn">刪除</a></div>
+        <div><a href="/{{this._id}}/edit" class="btn">修改</a></div>
+        <form action="/{{this._id}}?_method=DELETE" method="POST">
+          <div><button type="submit" class="btn">刪除</button></div>
+        </form>
       </div>
     </div>
   </div>
+  {{/each}}
 
 
 

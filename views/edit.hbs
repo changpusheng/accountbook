@@ -1,17 +1,17 @@
 <div class="edit-container">
   <div class="edit-container-content">
-    <form action="">
+    <form action="/{{item._id}}?_method=PUT" method="POST">
       <div class="edit edit-title-container">
         <div class="edit-title">*必填欄位</div>
         <div class="edit-title-text">請輸入你的支出</div>
       </div>
       <div class="edit edit-item-name-container">
         <label for="edit-item-name">名稱*:</label>
-        <input type="text" class="edit-item-name" id="edit-item-name">
+        <input type="text" class="edit-item-name" id="edit-item-name" name="name" value={{item.name}}>
       </div>
       <div class="edit edit-date-container">
         <label for="edit-date">日期*:</label>
-        <input type="date" class="edit-date" id="edit-date">
+        <input type="date" class="edit-date" id="edit-date" name="date" value={{item.createAt}}>
       </div>
       <div class="edit edit-category-container">
         <label for="edit-category">類別*:</label>
@@ -26,7 +26,7 @@
       </div>
       <div class="edit edit-amount-container">
         <label for="edit-amount">金額*:</label>
-        <input type="number" class="edit-amount" id="edit-amount">
+        <input type="number" class="edit-amount" id="edit-amount" name="amount" value={{item.amount}}>
       </div>
       <button type="submit" class="edit edit-btn">送出</button>
     </form>

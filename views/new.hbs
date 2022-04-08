@@ -10,13 +10,13 @@
         <input type="text" name="name" class="new-item-name" id="new-item-name">
       </div>
       <div class="new new-date-container">
-        <label for="new-date"  class="label-date">日期*:</label>
+        <label for="new-date" class="label-date">日期*:</label>
         <input type="date" name="date" class="new-date" id="new-date">
       </div>
       <div class="new new-category-container">
         <label for="new-category-title" class="label-category-title">類別*:</label>
         <select name="category" id="new-category-title">
-          <option value="new-default" selected disabled>Select</option>
+          <option value="0" selected disabled>Select</option>
           {{#each item}}
           <option value="{{this._id}}">{{this.name}}</option>
           {{/each}}
