@@ -17,7 +17,16 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">也元廣志の私帳</a>
+      <a class="navbar-brand" href="/">{{#if isAuthenticated}}{{user.name}}{{/if}}の私帳</a>
+    </div>
+    <div>
+      {{#if isAuthenticated}}
+      <a href="/user/logout" class="btn btn-outline-warning"
+        style="white-space: nowrap;font-size:larger;color:black;margin-right:10px;font-weight:900">登出</a>
+      {{else}}
+      <a href="/user/login" class="btn btn-outline-warning"
+        style="white-space: nowrap;font-size:larger;color:black;margin-right:10px;">登入</a>
+      {{/if}}
     </div>
   </nav>
   {{{body}}}

@@ -4,7 +4,7 @@
 
 .index-container{
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 #category-title{
@@ -89,7 +89,7 @@ margin-top: 0.5rem;
 }
 
 .create-list-container{
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }

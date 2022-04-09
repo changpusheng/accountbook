@@ -4,12 +4,12 @@ const router = require('./routes')
 const exphbs = require('express-handlebars').engine
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
-
+const session = require('express-session')
+const usePassport = require('./config/passport')
 
 if (process.env.NODE.ENV !== 'production') {
   require('dotenv').config()
 }
-
 
 require('./config/mongoose')
 
@@ -28,6 +28,17 @@ app.engine('hbs', exphbs({
 }))
 app.set('view engine', 'hbs')
 
+app.use(session({
+  secret: 'BBQ',
+  resave: false,
+  saveUninitialized: true
+}))
+usePassport(app)
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))

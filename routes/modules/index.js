@@ -5,8 +5,6 @@ const categortDB = require('../../models/categoryDB')
 const categoryIcon = require('../../public/icon/categoryIcon')
 let selectOptionValueNumber
 
-console.log(categoryIcon[0].icon)
-
 router.get('/', (req, res) => {
   selectOptionValueNumber = 0
   recordDB.find().lean().then(item => {
@@ -65,8 +63,12 @@ router.post('/new', (req, res) => {
 
 router.get('/:_id/edit', (req, res) => {
   const id = req.params._id
+  let categortDBItem
+  categortDB.find().lean().then(item => {
+    categortDBItem = item
+  })
   recordDB.findById(id).lean().then(item => {
-    res.render('edit', { item })
+    res.render('edit', { item, categortDBItem })
   }).catch(err => console.log('err' + err))
 })
 
