@@ -1,44 +1,47 @@
-<div class="index index-container">
-  <div class="index-category-container">
-    <select name="index-category-title" id="category-title">
-      <option value="index-default" selected disabled>類別</option>
-      <option value="index-homebox">家居物業</option>
-      <option value="index-car">交通出行</option>
-      <option value="index-game">休閒娛樂</option>
-      <option value="index-food">餐飲食品</option>
-      <option value="index-other">其他</option>
-    </select>
-  </div>
-  <div class="index totalamount-container">
-    <div class="totalamount-title">
-      總金額:
+<div class="index">
+  <div class="index index-container">
+    <div class="index-category-container">
+      <form action="/" method="POST" class="indexSelectForm">
+        <select name="indexSelect" class="indexSelect" id="category-title" onchange="this.form.submit()">
+          <option value="0" {{selected selectOptionValueNumber 0 }}>ALL</option>
+          <option value="1" {{selected selectOptionValueNumber 1 }}>家居物業</option>
+          <option value="5" {{selected selectOptionValueNumber 5 }}>交通出行</option>
+          <option value="9" {{selected selectOptionValueNumber 9 }}>休閒娛樂</option>
+          <option value="13" {{selected selectOptionValueNumber 13 }}>餐飲食品</option>
+          <option value="17" {{selected selectOptionValueNumber 17 }}>其他</option>
+        </select>
+      </form>
     </div>
-    <div class="totalamount-sum-amount">
-      {{totalAmount}}
+    <div class="index totalamount-container">
+      <div class="totalamount-title">
+        總金額:
+      </div>
+      <div class="totalamount-sum-amount">
+        {{totalAmount}}
+      </div>
     </div>
-  </div>
-  {{#each item}}
-  <div class="index list-container">
-    <div class="list-content">
-      <div class="list-content-name">
-        <div class="list-img"><i class=" fa-solid fa-house fa-xl"></i></div>
-        <div class="list-title">
-          <div class="list-container-name">{{this.name}}</div>
-          <div class="list-container-date">{{this.createAt}}</div>
+    {{#each item}}
+    <div class="index list-container">
+      <div class="list-content">
+        <div class="list-content-name">
+          <div class="list-img"><i class="{{this.categoryIcon}}"></i></div>
+          <div class="list-title">
+            <div class="list-container-name">{{this.name}}</div>
+            <div class="list-container-date">{{this.createAt}}</div>
+          </div>
+        </div>
+        <div class="list-item-amount">{{this.amount}}</div>
+        <div class="list-feat">
+          <div><a href="/{{this._id}}/edit" class="btn">修改</a></div>
+          <form action="/{{this._id}}?_method=DELETE" method="POST">
+            <div><button type="submit" class="btn">刪除</button></div>
+          </form>
         </div>
       </div>
-      <div class="list-item-amount">{{this.amount}}</div>
-      <div class="list-feat">
-        <div><a href="/{{this._id}}/edit" class="btn">修改</a></div>
-        <form action="/{{this._id}}?_method=DELETE" method="POST">
-          <div><button type="submit" class="btn">刪除</button></div>
-        </form>
-      </div>
     </div>
+    {{/each}}
+
+    <div class="index create-list-container"><a href="/new" class="btn btn-secondary">新增支出</a></div>
   </div>
-  {{/each}}
 
-
-
-  <div class="index create-list-container"><a href="/new" class="btn btn-secondary">新增支出</a></div>
 </div>

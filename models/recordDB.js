@@ -13,8 +13,12 @@ const recordSchema = new Schema({
     type: Number,
     required: true
   },
-  category: {
+  categoryIcon: {
     type: String,
+    required: true
+  },
+  categoryId: {
+    type: Number,
     required: true
   }
   // userId: {
@@ -23,12 +27,6 @@ const recordSchema = new Schema({
   //   index: true,
   //   required: false
   // },
-  // categoryId: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'CategoryDB',
-  //   index: true,
-  //   required: false
-  // }
 })
 
 module.exports = mongoose.model('RecordDB', recordSchema)

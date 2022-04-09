@@ -1,7 +1,10 @@
+.index{
+  text-align: center;
+}
+
 .index-container{
   display: inline-block;
   margin-top: 50px;
-  margin-left: 40%;
 }
 
 #category-title{
@@ -34,12 +37,12 @@
 }
 
 .list-container{
+  min-width: 400px;
   border: 1px solid gray;
   margin-bottom: 10px;
   border-radius: 10px;
   position: relative;
   font-size: 20px;
-  display: grid;
 }
 
 .list-content{
@@ -78,7 +81,7 @@ margin-top: 0.5rem;
 .list-feat{
   width: 50%;
  top: -0.5rem;
- left: 22rem;
+ left: 30rem;
   position: absolute;
   display: flex;
   justify-content: center;
