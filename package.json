@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed":"node models/seed/seeder.js",
+    "categoryseed": "node models/seed/categorySeeder.js",
+    "recordseed": "node models/seed/recordSeeder.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

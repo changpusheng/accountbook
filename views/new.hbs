@@ -7,25 +7,26 @@
       </div>
       <div class="new new-item-name-container">
         <label for="new-item-name" class="label-name">名稱*:</label>
-        <input type="text" name="name" class="new-item-name" id="new-item-name">
+        <input type="text" name="name" class="new-item-name" id="new-item-name" value="{{name}}">
       </div>
       <div class="new new-date-container">
         <label for="new-date" class="label-date">日期*:</label>
-        <input type="date" name="date" class="new-date" id="new-date">
+        <input type="date" name="date" class="new-date" id="new-date" value="{{date}}">
       </div>
       <div class="new new-category-container">
         <label for="new-category-title" class="label-category-title">類別*:</label>
-        <select name="category" id="new-category-title">
+        <select name="category" id="new-category-title" value="{{category}}">
           <option value="0" selected disabled>Select</option>
-          {{#each item}}
+          {{#each categoryIcon}}
           <option value="{{this.id}}">{{this.name}}</option>
           {{/each}}
         </select>
       </div>
       <div class="new new-amount-container">
         <label for="new-amount" class="label-amount">金額*:</label>
-        <input type="number" name="amount" class="new-amount" id="new-amount">
+        <input type="number" name="amount" class="new-amount" id="new-amount" value="{{amount}}">
       </div>
+      {{>message}}
       <button type="submit" class="new new-btn">新增支出</button>
     </form>
   </div>

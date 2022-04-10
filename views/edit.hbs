@@ -17,7 +17,7 @@
         <label for="edit-category">類別*:</label>
         <select name="editSelectValue" id="edit-category-title">
           <option value="0" selected disabled>Select</option>
-          {{#each categortDBItem}}
+          {{#each categoryIcon}}
           <option value="{{this.id}}">{{this.name}}</option>
           {{/each}}
         </select>
@@ -26,6 +26,7 @@
         <label for="edit-amount">金額*:</label>
         <input type="number" class="edit-amount" id="edit-amount" name="amount" value={{item.amount}}>
       </div>
+      {{>message}}
       <button type="submit" class="edit edit-btn">送出</button>
     </form>
   </div>

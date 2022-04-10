@@ -13,6 +13,7 @@ const recordSchema = new Schema({
     type: Number,
     required: true
   },
+  
   categoryIcon: {
     type: String,
     required: true
@@ -20,13 +21,13 @@ const recordSchema = new Schema({
   categoryId: {
     type: Number,
     required: true
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'UserDB',
+    index: true,
+    required: true
   }
-  // userId: {
-  //   type: Schema.Types.ObjectId,  
-  //   ref: 'UserDB',
-  //   index: true,
-  //   required: false
-  // },
 })
 
 module.exports = mongoose.model('RecordDB', recordSchema)

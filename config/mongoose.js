@@ -2,8 +2,6 @@ if (process.env.NODE.ENV !== 'production') {
   require('dotenv').config()
 }
 
-
-
 const mongoose = require('mongoose')
 const mongooseURI = process.env.mongooseURI
 mongoose.connect(mongooseURI)
