@@ -30,7 +30,7 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs')
 
 app.use(session({
-  secret: process.env.SECRET || oop,
+  secret: process.env.SECRET || 'oop',
   resave: false,
   saveUninitialized: true
 }))
