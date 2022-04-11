@@ -14,7 +14,7 @@ if (process.env.NODE.ENV !== 'production') {
 
 require('./config/mongoose')
 
-const Port = process.env.Port
+const Port = process.env.Port || 3000
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main', extname: '.hbs', helpers: {
