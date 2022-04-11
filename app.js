@@ -14,7 +14,7 @@ if (process.env.NODE.ENV !== 'production') {
 
 require('./config/mongoose')
 
-const Port = process.env.Port || 3000
+const port = process.env.Port || 3000
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main', extname: '.hbs', helpers: {
@@ -48,4 +48,4 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(router)
 
-app.listen(Port, () => console.log(`This sever is running on http://localhost:${Port}.`))
+app.listen(Port, () => console.log(`This sever is running on http://localhost:${port}.`))
