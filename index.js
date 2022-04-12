@@ -9,7 +9,7 @@ const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 
 //heroku 錯誤代碼 H20 新增IP
-const { LOCAL_ADDRESS = '0.0.0.0' } = process.env
+const { PORT = 3000, LOCAL_ADDRESS = '0.0.0.0' } = process.env
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 require('./config/mongoose')
 
-const port = process.env.Port || 3000
+
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main', extname: '.hbs', helpers: {
@@ -53,7 +53,8 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(router)
 
-app.listen(port, LOCAL_ADDRESS, () => {
-  console.log(`This sever is running on http://localhost:${port}.`)
+app.listen(PORT, LOCAL_ADDRESS, () => {
+  console.log(`This sever is running on http://localhost:${PORT
+}.`)
 })
 
