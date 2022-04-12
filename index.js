@@ -8,6 +8,9 @@ const session = require('express-session')
 const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 
+//heroku 錯誤代碼 H20 新增IP
+const { LOCAL_ADDRESS = '0.0.0.0' } = process.env
+
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -50,5 +53,7 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(router)
 
-app.listen(port, () => console.log(`This sever is running on http://localhost:${port}.`))
+app.listen(port, LOCAL_ADDRESS, () => {
+  console.log(`This sever is running on http://localhost:${port}.`)
+})
 
