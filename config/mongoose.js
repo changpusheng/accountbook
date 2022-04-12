@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const mongoose = require('mongoose')
 const mongooseURI = process.env.mongooseURI
-mongoose.connect(mongooseURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(mongooseURI)
 const db = mongoose.connection
 
 db.on('error', () => console.log('mongoose error:' + error))

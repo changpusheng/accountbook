@@ -8,6 +8,7 @@ const session = require('express-session')
 const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -50,3 +51,4 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(router)
 
 app.listen(port, () => console.log(`This sever is running on http://localhost:${port}.`))
+
