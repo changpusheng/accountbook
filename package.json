@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "start": "node index.js",
     "categoryseed": "node models/seed/categorySeeder.js",
     "recordseed": "node models/seed/recordSeeder.js",
     "package": "npm i express express-handlebars express-session nodemon passport passport-local passport-facebook method-override mongoose dotenv connect-flash body-parser bcryptjs",
