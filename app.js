@@ -8,7 +8,7 @@ const session = require('express-session')
 const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 
-if (process.env.NODE.ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
@@ -30,10 +30,11 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs')
 
 app.use(session({
-  secret: process.env.SECRET || 'oop',
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
+
 usePassport(app)
 app.use(flash())
 app.use((req, res, next) => {
