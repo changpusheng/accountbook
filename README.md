@@ -4,6 +4,8 @@
 
 (線上網址)heroku:https://accountbook0003.herokuapp.com/user/login
 
+預設帳號:root01@example.com /密碼: 1234
+
 畫面渲染:
 <ul>
 <li>
